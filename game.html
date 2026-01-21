@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Youth Force – Tree Run Game</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #eaf7ea;
+  text-align: center;
+}
+canvas {
+  background: #87ceeb;
+  border: 3px solid #2ecc71;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🌱 Youth Force – Run for Trees</h1>
+<p>Press <b>SPACE</b> to jump and plant trees</p>
+
+<canvas id="game" width="600" height="250"></canvas>
+<p>Trees planted: <span id="score">0</span></p>
+
+<script>
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+
+let y = 170;
+let velocity = 0;
+let gravity = 0.8;
+let score = 0;
+let trees = [];
+
+function drawGround() {
+  ctx.fillStyle = "#2ecc71";
+  ctx.fillRect(0,210,600,40);
+}
+
+function drawPlayer() {
+  ctx.fillStyle = "#e74c3c"; // RED player (visible always)
+  ctx.fillRect(50,y,30,40);
+}
+
+function drawTrees() {
+  ctx.fillStyle = "green";
+  trees.forEach(t => {
+    t.x -= 3;
+    ctx.fillRect(t.x,180,15,30);
+  });
+
+  if (trees.length && trees[0].x < 0) {
+    trees.shift();
+    score++;
+    document.getElementById("score").innerText = score;
+  }
+}
+
+function update() {
+  ctx.clearRect(0,0,600,250);
+
+  velocity += gravity;
+  y += velocity;
+  if (y > 170) { y = 170; velocity = 0; }
+
+  drawGround();
+  drawPlayer();
+  drawTrees();
+
+  requestAnimationFrame(update);
+}
+
+setInterval(() => {
+  trees.push({x:600});
+}, 1500);
+
+document.addEventListener("keydown", e => {
+  if (e.code === "Space" && y === 170) {
+    velocity = -13;
+  }
+});
+
+update();
+</script>
+
+</body>
+</html>
+
+
