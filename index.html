@@ -2,255 +2,68 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Youth Force – Environmental NGO</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Youth Disaster Management NGO</title>
-
 <style>
-:root{
-  --primary:#ff5722;
-  --secondary:#0a3d62;
-  --light:#f4faff;
-}
-
-*{
-  box-sizing:border-box;
-  scroll-behavior:smooth;
-}
-
-body{
-  margin:0;
-  font-family:'Segoe UI',sans-serif;
-  background:var(--light);
-  color:#333;
-}
-
-/* ===== HEADER ===== */
-header{
-  min-height:100vh;
-  background:linear-gradient(120deg,#0a3d62,#1e90ff);
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:20px;
-}
-
-header h1{
-  font-size:3rem;
-  animation:fadeDown 1.2s ease;
-}
-
-header p{
-  font-size:1.3rem;
-  margin:20px 0;
-  animation:fadeUp 1.5s ease;
-}
-
-.btn{
-  display:inline-block;
-  padding:14px 28px;
-  background:var(--primary);
-  color:white;
-  text-decoration:none;
-  border-radius:30px;
-  font-weight:bold;
-  transition:0.3s;
-}
-
-.btn:hover{
-  background:#e64a19;
-  transform:scale(1.05);
-}
-
-/* ===== NAV ===== */
-nav{
-  position:sticky;
-  top:0;
-  background:white;
-  box-shadow:0 2px 10px rgba(0,0,0,0.1);
-  z-index:10;
-}
-
-nav ul{
-  list-style:none;
-  display:flex;
-  justify-content:center;
-  margin:0;
-  padding:10px;
-}
-
-nav ul li a{
-  margin:0 15px;
-  text-decoration:none;
-  color:#333;
-  font-weight:600;
-}
-
-nav ul li a:hover{
-  color:var(--primary);
-}
-
-/* ===== SECTIONS ===== */
-section{
-  padding:80px 20px;
-  max-width:1100px;
-  margin:auto;
-}
-
-section h2{
-  text-align:center;
-  font-size:2.4rem;
-  margin-bottom:20px;
-  color:var(--secondary);
-}
-
-.reveal{
-  opacity:0;
-  transform:translateY(40px);
-  transition:1s;
-}
-
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* ===== CARDS ===== */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-  margin-top:40px;
-}
-
-.card{
-  background:white;
-  padding:30px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.1);
-  transition:0.3s;
-}
-
-.card:hover{
-  transform:translateY(-10px);
-}
-
-.card h3{
-  color:var(--primary);
-}
-
-/* ===== CONTACT ===== */
-.contact{
-  background:linear-gradient(120deg,#1e90ff,#0a3d62);
-  color:white;
-  border-radius:20px;
-  padding:40px;
-  text-align:center;
-}
-
-/* ===== FOOTER ===== */
-footer{
-  background:#0a3d62;
-  color:white;
-  text-align:center;
-  padding:20px;
-}
-
-/* ===== ANIMATIONS ===== */
-@keyframes fadeDown{
-  from{opacity:0;transform:translateY(-40px);}
-  to{opacity:1;transform:translateY(0);}
-}
-
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(40px);}
-  to{opacity:1;transform:translateY(0);}
-}
-
-/* ===== RESPONSIVE ===== */
-@media(max-width:600px){
-  header h1{font-size:2.2rem;}
-}
+body {margin:0;font-family:Segoe UI,sans-serif;background:#f4f9f4;color:#2c3e50}
+header{background:linear-gradient(135deg,#2ecc71,#27ae60);color:#fff;padding:60px 20px;text-align:center}
+header h1{font-size:3rem;margin-bottom:10px}
+.typing{font-size:1.3rem;border-right:2px solid #fff;display:inline-block;white-space:nowrap;overflow:hidden;animation:typing 4s steps(40) infinite alternate}
+@keyframes typing{from{width:0}to{width:100%}}
+section{padding:50px 20px;max-width:1100px;margin:auto}
+h2{text-align:center;color:#27ae60;margin-bottom:20px}
+.about{text-align:center;font-size:1.1rem;line-height:1.6}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px}
+.gallery img{width:100%;border-radius:10px}
+#game{background:#dff5e1;border-radius:15px;padding:20px;text-align:center}
+canvas{background:#87ceeb;border-radius:10px}
+footer{background:#1e8449;color:#fff;text-align:center;padding:20px}
 </style>
 </head>
-
 <body>
 
 <header>
-  <div>
-    <h1 id="typing"></h1>
-    <p>Building Youth-Led Resilience for Disaster Preparedness & Response</p>
-    <a href="#about" class="btn">Join Our Mission</a>
-  </div>
+<img src="character.png" style="width:120px;border-radius:50%">
+<h1>Youth Force</h1>
+<div class="typing">Running for Trees 🌱 Saving Our Environment</div>
 </header>
 
-<nav>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#mission">Mission</a></li>
-    <li><a href="#work">Our Work</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<section id="about" class="reveal">
-  <h2>About Us</h2>
-  <p style="text-align:center;max-width:800px;margin:auto;">
-    We are a youth-driven NGO focused on disaster risk reduction, emergency
-    response, and community resilience.
-  </p>
+<section>
+<h2>About Us</h2>
+<div class="about">
+Youth Force is a youth-led environmental and social development organization working for a greener and sustainable future.
+</div>
 </section>
 
-<section id="mission" class="reveal">
-  <h2>Our Mission</h2>
-  <div class="cards">
-    <div class="card"><h3>Preparedness</h3><p>Life-saving disaster readiness skills.</p></div>
-    <div class="card"><h3>Response</h3><p>Rapid youth-led emergency response.</p></div>
-    <div class="card"><h3>Recovery</h3><p>Long-term resilience building.</p></div>
-  </div>
-</section>
-
-<section id="work" class="reveal">
-  <h2>What We Do</h2>
-  <div class="cards">
-    <div class="card"><h3>Disaster Training</h3></div>
-    <div class="card"><h3>Volunteer Mobilization</h3></div>
-    <div class="card"><h3>Community Awareness</h3></div>
-  </div>
-</section>
-
-<section id="contact" class="reveal">
-  <div class="contact">
-    <h2>Contact Us</h2>
-    <p><strong>Founder & CEO:</strong> Raufun Nabi</p>
-    <p>Email: info@yourngo.org</p>
-  </div>
+<section>
+<h2>🌳 Run & Plant Trees Game</h2>
+<div id="game">
+<canvas id="gameCanvas" width="600" height="200"></canvas>
+<div> Trees Planted: <span id="score">0</span></div>
+<p>Press SPACE to jump</p>
+</div>
 </section>
 
 <footer>
-  <p>© 2026 Youth Disaster Management NGO</p>
+© 2026 Youth Force
 </footer>
 
 <script>
-const text = "Youth Disaster Management Initiative";
-let i = 0;
-function type(){
-  if(i < text.length){
-    document.getElementById("typing").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(type,80);
-  }
+const canvas=document.getElementById("gameCanvas");
+const ctx=canvas.getContext("2d");
+let img=new Image();img.src="character.png";
+let y=140,v=0,score=0,trees=[];
+function loop(){
+ctx.clearRect(0,0,600,200);
+v+=1;y+=v;if(y>140){y=140;v=0}
+ctx.drawImage(img,50,y,40,40);
+trees.forEach(t=>{t.x-=3;ctx.fillStyle="green";ctx.fillRect(t.x,160,10,40)});
+if(trees.length&&trees[0].x<0){trees.shift();score++;document.getElementById("score").innerText=score}
+requestAnimationFrame(loop)
 }
-type();
-
-window.addEventListener("scroll",()=>{
-  document.querySelectorAll(".reveal").forEach(el=>{
-    if(el.getBoundingClientRect().top < window.innerHeight - 100){
-      el.classList.add("active");
-    }
-  });
-});
+setInterval(()=>trees.push({x:600}),2000);
+document.addEventListener("keydown",e=>{if(e.code==="Space")v=-12});
+loop();
 </script>
 
 </body>
